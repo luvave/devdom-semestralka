@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/PoppinsRegular-B2Bw.otf');
+}
+@font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/PoppinsBold-GdJA.otf');
+}
+
+$main-font: Poppins-Regular, "sans-serif";
+
+$primary-color-gradient: #EDE574;
+$secundary-color-gradient:  #E1F5C4;
+
+$logo-color: #D4AF37;
+
+$menu-font: Poppins-Bold, "sans-serif";

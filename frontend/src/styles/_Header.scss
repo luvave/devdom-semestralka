@@ -1,0 +1,225 @@
+@import 'Config';
+
+//Logo
+.logo{
+    display: grid;
+    width: 18rem;
+    padding-top: 7rem;
+    order: 1;
+}
+
+.logo_image{
+    width: 15rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.logo_text {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: -3.5rem;
+    font-family: $menu-font;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    //text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    background-image: linear-gradient(
+        to right,
+        #462523 0,
+               #cb9b51 22%, 
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%
+        );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+}
+
+//Main menu
+.main_menu{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    
+    height: 21rem;
+    margin-top: -5rem;
+    margin-bottom: -5rem;
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 5px 15px -10px #111;
+
+	text-align: center;
+	background-size: cover;
+	background-attachment: fixed;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 0, 100% 60%, 75% 70%, 60% 100%, 40% 100%, 25% 70%, 0 60%, 0 0);
+}
+
+.main_menu_item{
+    color: #111;
+    padding: 1.5rem;
+    margin-top: -1rem;
+    text-decoration: none;
+    text-shadow: rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;
+
+    font-family: $menu-font;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	position: relative;
+}
+
+.main_menu_item_active{
+    @extend .main_menu_item;
+    color: #ffdb19;
+    text-shadow: rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.main_menu_item:nth-of-type(2n) {
+    order: 2;
+}
+
+//Hover effect edited from https://simbyone.com/demo/30-css-hover-effects-for-buttons/
+.main_menu_item::before{
+	content: '';
+	position: absolute;
+    bottom: 0;
+    top: 25%;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(0, 0, 0, 0.5);
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	-webkit-transform: scale(0.1, 1);
+	transform: scale(0.1, 1);
+	
+}
+.main_menu_item:hover span{
+	letter-spacing: 2px;
+	}
+.main_menu_item:hover::before{
+	opacity: 1;	
+	-webkit-transform: scale(1, 1);
+	transform: scale(1, 1);
+	
+}
+.main_menu_item::after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.main_menu_item:hover::after{
+	opacity: 0;	
+	-webkit-transform: scale(0.1, 1);
+	transform: scale(0.1, 1);
+}
+
+.menu_checkbox{
+   position: absolute;
+   visibility: hidden;
+   left: 0;
+   z-index: -1111;
+}
+.menu_icon,.hide_menu{
+    transition: 0.4s;
+    font-size: 3rem;
+    border-style: solid;
+    cursor: pointer;
+    display: none;
+    text-align: right;
+}
+.menu_icon:hover,
+.hide_menu:hover{
+  color: darkred;
+}
+
+.main_menu_checked{
+    @extend .main_menu;
+    right: 0;
+}
+
+// Tablet
+@media (max-width: 1200px) {
+    .menu_icon, .hide_menu{
+        display: block;
+    }
+    .menu_icon{
+        border-style: none;
+    }
+    .main_menu{
+        display: block;
+        clip-path: none;
+        height: 100%;
+        background: white;
+        margin-bottom: 0;
+        margin-top: 0;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 20rem;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .logo_text{
+        display: none;
+    }
+    .logo{
+        padding-top: 0rem;
+        width: 100%;
+    }
+    .main_menu_item{
+        display: block;
+        padding: 20px;
+    }
+    .hide_menu{
+        position: absolute;
+        color: black;
+        top: 2rem;
+        right: 2rem;
+      }
+    .main_menu_checked{
+        right: 0;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .main_menu{
+        right: -300%;
+    }
+    .main_menu_checked{
+        right: 0;
+    }
+}

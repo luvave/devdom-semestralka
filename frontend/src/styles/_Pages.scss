@@ -1,0 +1,30 @@
+@import 'Config';
+
+.page{
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    margin-top: 6rem;
+    padding: 1rem;
+    border: black 2px solid;
+}
+
+.page_header{
+    font-size: 2rem;
+    margin: 1rem;
+    text-decoration: underline;
+}
+
+.page_error{
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .page{
+        margin: auto;
+        width: 90%;
+        padding-top: 0rem;
+    }
+}

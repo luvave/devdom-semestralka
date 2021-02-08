@@ -1,0 +1,59 @@
+@import 'Config';
+
+.form_field{
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    line-height: 3rem;
+}
+
+.form_text_input{
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    width: 30rem;
+    height: 2rem;
+}
+
+.form_content_input{
+    font-size: 1.3rem;
+    margin-left: 1rem;
+	width: 90%;
+	height: 20rem;
+}
+
+.form_submit_button{
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    font: bold 15px arial, sans-serif;
+    text-shadow:none;
+}
+
+.form_submit_button {
+	margin-top: 1rem;
+	box-shadow:inset 0px 0px 10px -5px #212121;
+	background:linear-gradient(to bottom, #996415 5%, #b39b32 100%);
+	background-color:#996415;
+	border-radius:21px;
+	border:2px solid #a36700;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:22px;
+	font-weight:bold;
+	padding:11px 33px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000000;
+}
+.form_submit_button:hover {
+	background:linear-gradient(to bottom, #b39b32 5%, #996415 100%);
+	background-color:#b39b32;
+}
+.form_submit_button:active {
+	position:relative;
+	top:1px;
+}
+        
+    
+    
